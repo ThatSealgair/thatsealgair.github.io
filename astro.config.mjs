@@ -16,7 +16,7 @@ const options = {
 // https://astro.build/config
 export default defineConfig({
   site: "https://sealgair.dev",
-  integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false }), astroImageTools],
+  integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false }), astroImageTools()],
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex, [rehypePrettyCode, options]]
