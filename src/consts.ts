@@ -1,81 +1,44 @@
-import type { Site, Page, Links, Socials } from "@types"
+import type { Site, Metadata, Socials } from "@types";
 
-// Global
 export const SITE: Site = {
-  TITLE: "Sealgair",
-  DESCRIPTION: "Technical blog and portfolio",
-  AUTHOR: "Jay Hunter",
-}
+  NAME: "Astro Nano",
+  EMAIL: "markhorn.dev@gmail.com",
+  NUM_POSTS_ON_HOMEPAGE: 3,
+  NUM_WORKS_ON_HOMEPAGE: 2,
+  NUM_PROJECTS_ON_HOMEPAGE: 3,
+};
 
-// Work Page
-export const WORK: Page = {
-  TITLE: "Work",
-  DESCRIPTION: "Places I have worked.",
-}
+export const HOME: Metadata = {
+  TITLE: "Home",
+  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+};
 
-// Blog Page
-export const BLOG: Page = {
+export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "Writing on topics I am passionate about.",
-}
+  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+};
 
-// Projects Page 
-export const PROJECTS: Page = {
+export const WORK: Metadata = {
+  TITLE: "Work",
+  DESCRIPTION: "Where I have worked and what I have done.",
+};
+
+export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "Recent projects I have worked on.",
-}
+  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+};
 
-// Search Page
-export const SEARCH: Page = {
-  TITLE: "Search",
-  DESCRIPTION: "Search all posts and projects by keyword.",
-}
-
-// Links
-export const LINKS: Links = [
-  { 
-    TEXT: "Home", 
-    HREF: "/", 
-  },
-  { 
-    TEXT: "Work", 
-    HREF: "/work", 
-  },
-  { 
-    TEXT: "Blog", 
-    HREF: "/blog", 
-  },
-  { 
-    TEXT: "Projects", 
-    HREF: "/projects", 
-  },
-]
-
-// Socials
 export const SOCIALS: Socials = [
   { 
-    NAME: "Email",
-    ICON: "email", 
-    TEXT: "",
-    HREF: "",
+    NAME: "twitter-x",
+    HREF: "https://twitter.com/markhorn_dev",
   },
   { 
-    NAME: "Github",
-    ICON: "github",
-    TEXT: "thatsealgair",
-    HREF: "https://github.com/ThatSealgair"
+    NAME: "github",
+    HREF: "https://github.com/markhorn-dev"
   },
   { 
-    NAME: "LinkedIn",
-    ICON: "linkedin",
-    TEXT: "LinkedIn",
-    HREF: "https://www.linkedin.com/in/jay-k-hunter/",
-  },
-  { 
-    NAME: "Twitter",
-    ICON: "twitter-x",
-    TEXT: "",
-    HREF: "",
-  },
-]
-
+    NAME: "linkedin",
+    HREF: "https://www.linkedin.com/in/markhorn-dev",
+  }
+];
