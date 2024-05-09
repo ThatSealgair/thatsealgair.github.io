@@ -136,108 +136,101 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"01-getting-started/index.md": {
-	id: "01-getting-started/index.md";
-  slug: "01-getting-started";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"02-blog-collection/index.md": {
-	id: "02-blog-collection/index.md";
-  slug: "02-blog-collection";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"03-projects-collection/index.md": {
-	id: "03-projects-collection/index.md";
-  slug: "03-projects-collection";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"04-work-collection/index.md": {
-	id: "04-work-collection/index.md";
-  slug: "04-work-collection";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"05-markdown-syntax/index.md": {
-	id: "05-markdown-syntax/index.md";
-  slug: "05-markdown-syntax";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"06-mdx-syntax/index.mdx": {
-	id: "06-mdx-syntax/index.mdx";
-  slug: "06-mdx-syntax";
+"basic_flag_searching_talk_2022/index.mdx": {
+	id: "basic_flag_searching_talk_2022/index.mdx";
+  slug: "basic_flag_searching_talk_2022";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
-"07-year-sorting-example/index.md": {
-	id: "07-year-sorting-example/index.md";
-  slug: "07-year-sorting-example";
+"icc_qualifier_challenges_2022/index.mdx": {
+	id: "icc_qualifier_challenges_2022/index.mdx";
+  slug: "icc_qualifier_challenges_2022";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"08-draft-example/index.md": {
-	id: "08-draft-example/index.md";
-  slug: "08-draft-example";
+} & { render(): Render[".mdx"] };
+"introduction_to_research_practices/index.mdx": {
+	id: "introduction_to_research_practices/index.mdx";
+  slug: "introduction_to_research_practices";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
 "projects": {
-"project-1/index.md": {
-	id: "project-1/index.md";
-  slug: "project-1";
+"engg1100_ufv/index.mdx": {
+	id: "engg1100_ufv/index.mdx";
+  slug: "engg1100_ufv";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
-"project-2/index.md": {
-	id: "project-2/index.md";
-  slug: "project-2";
+} & { render(): Render[".mdx"] };
+"roborave_2024/index.mdx": {
+	id: "roborave_2024/index.mdx";
+  slug: "roborave_2024";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
+"technical_blog_rewrite_2024/index.mdx": {
+	id: "technical_blog_rewrite_2024/index.mdx";
+  slug: "technical_blog_rewrite_2024";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".mdx"] };
 };
 "work": {
-"apple.md": {
-	id: "apple.md";
-  slug: "apple";
+"auscert.mdx": {
+	id: "auscert.mdx";
+  slug: "auscert";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
-"facebook.md": {
-	id: "facebook.md";
-  slug: "facebook";
+} & { render(): Render[".mdx"] };
+"cyber_research_assistant_1600.mdx": {
+	id: "cyber_research_assistant_1600.mdx";
+  slug: "cyber_research_assistant_1600";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
-"google.md": {
-	id: "google.md";
-  slug: "google";
+} & { render(): Render[".mdx"] };
+"cyborg_dynamics.mdx": {
+	id: "cyborg_dynamics.mdx";
+  slug: "cyborg_dynamics";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
-"mcdonalds.md": {
-	id: "mcdonalds.md";
-  slug: "mcdonalds";
+} & { render(): Render[".mdx"] };
+"eait_leaders_mentor.mdx": {
+	id: "eait_leaders_mentor.mdx";
+  slug: "eait_leaders_mentor";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
+"icc_coordinator.mdx": {
+	id: "icc_coordinator.mdx";
+  slug: "icc_coordinator";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
+"mathworks.mdx": {
+	id: "mathworks.mdx";
+  slug: "mathworks";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
+"uq_tutor.mdx": {
+	id: "uq_tutor.mdx";
+  slug: "uq_tutor";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
 };
 
 	};
