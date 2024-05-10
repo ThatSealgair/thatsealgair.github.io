@@ -157,6 +157,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"making_slides_with_quarto/index.mdx": {
+	id: "making_slides_with_quarto/index.mdx";
+  slug: "making_slides_with_quarto";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 };
 "projects": {
 "engg1100_ufv/index.mdx": {
