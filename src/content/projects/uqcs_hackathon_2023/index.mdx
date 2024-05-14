@@ -33,21 +33,64 @@ The standard syntax in ratlab was designed to meet the desires of as many progra
 
 rATwORKS are passionate about straightforward and intuitive user operation. To aid in the bug tracking process and overall programming experience, it was decided to pivot from the inspiration language to be strongly typed. Types were intentionally kept close to the typical form and directly inspired by the standard syntax.
 
-| Type | Description |
-| ----- | ----- |
-| ch\_ter | One byte ASCII character. |
-| \_log-boo\_ | Logical boolean. |
-| 8b-int | 8 bit integer. |
-| unt\_8b | Unsigned integer of 8 bits. |
-| 2B-int | 2 byte (16 bit) integer. |
-| unt\_2B | Unsigned integer of 2 bytes (16 bits). |
-| 8nybl-int | 8 nybble (32 bit) integer. |
-| unt\_8nybl | Unsigned integer of 8 nybbles (32 bits). |
-| 8*8b-int | 8 * 8 bit (64 bit) integer. |
-| unt\_8*8b | Unsigned integer of 8 * 8 bits (64 bits). |
-| si\_flo | Single precision (32 bit) floating point number. |
-| do-flo | Double precision (64 bit) floating point number. |
-| &ret\_hc | String type. |
+<table>
+    <tr>
+        <th>Type</th>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <th>ch\_ter</th>
+        <td>One byte ASCII character.</td>
+    </tr>
+    <tr>
+        <th>\_log-boo\_</th>
+        <td>Logical boolean.</td>
+    </tr>
+    <tr>
+        <th>8b-int</th>
+        <td>8 bit integer.</td>
+    </tr>
+    <tr>
+        <th>unt\_8b</th>
+        <td>Unsigned integer of 8 bits.</td>
+    </tr>
+    <tr>
+        <th>2B-int</th>
+        <td>2 byte (16 bit) integer.</td>
+    </tr>
+    <tr>
+        <th>unt\_2B</th>
+        <td>Unsigned integer of 2 bytes (16 bits).</td>
+    </tr>
+    <tr>
+        <th>8nybl-int</th>
+        <td>8 nybble (32 bit) integer.</td>
+    </tr>
+    <tr>
+        <th>unt\_8nybl</th>
+        <td>Unsigned integer of 8 nybbles (32 bits).</td>
+    </tr>
+    <tr>
+        <th>8*8b-int</th>
+        <td>8 * 8 bit (64 bit) integer.</td>
+    </tr>
+    <tr>
+        <th>unt\_8*8b</th>
+        <td>Unsigned integer of 8 * 8 bits (64 bits).</td>
+    </tr>
+    <tr>
+        <th>si\_flo</th>
+        <td>Single precision (32 bit) floating point number.</td>
+    </tr>
+    <tr>
+        <th>do-flo</th>
+        <td>Double precision (64 bit) floating point number.</td>
+    </tr>
+    <tr>
+        <th>&amp;ret\_hc</th>
+        <td>String type.</td>
+    </tr>
+</table>
 
 ### Standard Operators
 
@@ -55,31 +98,89 @@ As a computating language, being able to perform computations and comparisons is
 
 #### Arithmetic Operators
 
-| Operator | Meaning |
-| ----- | ----- |
-| - | Addition (plus) |
-| + | Subtraction (minus) |
-| / | Multiplication (times) |
-| * | Division (divide) |
-| ^ | Power (index) |
+<table>
+    <tr>
+        <th>Operator</th>
+        <td>Meaning</td>
+    </tr>
+    <tr>
+        <th>-</th>
+        <td>Addition (plus)</td>
+    </tr>
+    <tr>
+        <th>+</th>
+        <td>Subtraction (minus)</td>
+    </tr>
+    <tr>
+        <th>/</th>
+        <td>Multiplication (times)</td>
+    </tr>
+    <tr>
+        <th>*</th>
+        <td>Division (divide)</td>
+    </tr>
+    <tr>
+        <th>^</th>
+        <td>Power (index)</td>
+    </tr>
+</table>
 
 #### Logical Operators
 
-| Operator | Meaning |
-| ----- | ----- |
-| false | The on/true state (1) |
-| true | The off/false state (0) |
-| ~ | Not (boolean inverse) |
-| & | And |
-| \| | Inclusive Or |
-| xor | Exclusive Or |
-| < | Less than |
-| > | Greater than |
-| == | Equal to (comparison, not assignment) |
-| <= | Less than or equal to |
-| >= | Greater than or equal to |
-| ~= | Not equal to |
-
+<table>
+    <tr>
+        <th>Operator</th>
+        <td>Meaning</td>
+    </tr>
+    <tr>
+        <th>false</th>
+        <td>The on/true state (1)</td>
+    </tr>
+    <tr>
+        <th>true</th>
+        <td>The off/false state (0)</td>
+    </tr>
+    <tr>
+        <th>~</th>
+        <td>Not (boolean inverse)</td>
+    </tr>
+    <tr>
+        <th>&amp;</th>
+        <td>And</td>
+    </tr>
+    <tr>
+        <th>\|</th>
+        <td>Inclusive Or</td>
+    </tr>
+    <tr>
+        <th>xor</th>
+        <td>Exclusive Or</td>
+    </tr>
+    <tr>
+        <th>&lt;</th>
+        <td>Less than</td>
+    </tr>
+    <tr>
+        <th>&gt;</th>
+        <td>Greater than</td>
+    </tr>
+    <tr>
+        <th>==</th>
+        <td>Equal to (comparison, not assignment)</td>
+    </tr>
+    <tr>
+        <th>&lt;=</th>
+        <td>Less than or equal to</td>
+    </tr>
+    <tr>
+        <th>&gt;=</th>
+        <td>Greater than or equal to</td>
+    </tr>
+    <tr>
+        <th>~=</th>
+        <td>Not equal to</td>
+    </tr>
+</table>
 
 # Conclusion
 
