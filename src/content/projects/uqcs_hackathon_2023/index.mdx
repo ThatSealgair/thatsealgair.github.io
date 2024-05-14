@@ -1,0 +1,88 @@
+---
+title: "UQCS Hackathon 2023: ratlab"
+description: "Built a transpiler from a MATLAB-based language to Rust in a weekend-long hackathon."
+date: "Sep 03 2023"
+draft: true
+---
+
+# Introduction
+
+For the 2023 UQCS Hackathon, I worked with a friend to develop **ratlab** a programming language that is legally distinct from MATLAB. This language was transpiled from our language to Rust, *in once use-case*. Together, we won the award for *Most Masochistic* and $250 AUD. 
+
+# The Experience
+
+Prior to the challenge neither of us had taken an algorithms course let alone a compilers course. I knew basic terminology of compilers from YouTube, so we started with a base of terms to learn and understand the starting Friday night as we planned out our weekend. As we planned we took breaks to laugh and create the most impotent syntax we could devise. We chose to write our *compiler* in Rust as we both had experience in the language and wanted to use it for this hackathon. My role was to tokenise a given `.rat` file for my team member to then turn into *working* Rust code.
+
+Neither of us slept well that weekend. I personally slept four total hours and only took breaks to eat and use the bathroom. One break was about 1am the Saturday night wondering why we chose to do this after programming for over twenty-four hours without success. Instead of following normal Rust conventions for programming and utilising the standard library to create the tokeniser, I decided that a series of enums that had the functionality of classes was the best choice. This caused more pain then I can describe in the English language. It also created a huge amount of uncessary tedium.
+
+Ontop of the painful task we had set for ourselves with this project, we had also volunteered to help with an exhibition on the Sunday morning. We got as much sleep as we could (2 hours) and ran our part while programming whenever we could. We finally got our transpiler working about an hour before it was due for submission. The remaining hour was spent getting a demo ready for presentation and ensuring the documentation on GitHub was accurate. Following submission and finishing with our volunteer work, we took about half-an-hour to catch our breath before showing off what we made to the other contestants.
+
+Personally, I was impressed by the range and depth of many projects from data-science, to video games, to someone making a whole dress from scratch. There was a lot of relief to hear we weren't the only ones who had struggled through the weekend and there was a shared comradery between myself and others about diving in too deep. Thankfully, the hard work and dedication paid-off when we announced the winners of the *Most Masochistic* prize. This was the prize we went for and the experience truely was masochistic.
+
+Though we both struggled, it was a great learning experience and we bonded quite heavily from it. It was a great weekend. I am looking forward to the next hackathon we compete in together.
+
+# ratlab
+
+The repository can be found [here](https://github.com/ThatSealgair/ratlab/tree/main) on GitHub. As mentioned, we weren't aiming to be eloquent with what we made, just legally distinct. From the README of the repository, the syntax and types are described:
+
+## Syntax
+
+The standard syntax in ratlab was designed to meet the desires of as many programmers as possible. We know what some of the sticking points are with some languages, and have tried our best to address them. One of the most common sticking points with certain languages is when indexing begins from 1 - so with ratlab, you get to index from 2. Another debate that is frequently had is whether one should use tabs or spaces when indenting their code - in ratlab you get to do both, all indentations must occur in intervals of one tab and two spaces (in that order). As with most languages, lines will need to terminate in semi-colons.
+
+### Types
+
+rATwORKS are passionate about straightforward and intuitive user operation. To aid in the bug tracking process and overall programming experience, it was decided to pivot from the inspiration language to be strongly typed. Types were intentionally kept close to the typical form and directly inspired by the standard syntax.
+
+| Type | Description |
+| ----- | ----- |
+| ch\_ter | One byte ASCII character. |
+| \_log-boo\_ | Logical boolean. |
+| 8b-int | 8 bit integer. |
+| unt\_8b | Unsigned integer of 8 bits. |
+| 2B-int | 2 byte (16 bit) integer. |
+| unt\_2B | Unsigned integer of 2 bytes (16 bits). |
+| 8nybl-int | 8 nybble (32 bit) integer. |
+| unt\_8nybl | Unsigned integer of 8 nybbles (32 bits). |
+| 8*8b-int | 8 * 8 bit (64 bit) integer. |
+| unt\_8*8b | Unsigned integer of 8 * 8 bits (64 bits). |
+| si\_flo | Single precision (32 bit) floating point number. |
+| do-flo | Double precision (64 bit) floating point number. |
+| &ret\_hc | String type. |
+
+### Standard Operators
+
+As a computating language, being able to perform computations and comparisons is an important part of what the language can do. The standard syntax for various operations are as follows:
+
+#### Arithmetic Operators
+
+| Operator | Meaning |
+| ----- | ----- |
+| - | Addition (plus) |
+| + | Subtraction (minus) |
+| / | Multiplication (times) |
+| * | Division (divide) |
+| ^ | Power (index) |
+
+#### Logical Operators
+
+| Operator | Meaning |
+| ----- | ----- |
+| false | The on/true state (1) |
+| true | The off/false state (0) |
+| ~ | Not (boolean inverse) |
+| & | And |
+| \| | Inclusive Or |
+| xor | Exclusive Or |
+| < | Less than |
+| > | Greater than |
+| == | Equal to (comparison, not assignment) |
+| <= | Less than or equal to |
+| >= | Greater than or equal to |
+| ~= | Not equal to |
+
+
+# Conclusion
+
+My personal belief is that hackathons are an oppertunity to learn something or try something you otherwise wouldn't make the time for. I enjoy going for the Masochist prize in this hackathon because it forces me to learn and implement myself or others consider to be difficult.
+
+
