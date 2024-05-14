@@ -143,6 +143,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"dotfiles_2024/index.mdx": {
+	id: "dotfiles_2024/index.mdx";
+  slug: "dotfiles_2024";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 "icc_qualifier_challenges_2022/index.mdx": {
 	id: "icc_qualifier_challenges_2022/index.mdx";
   slug: "icc_qualifier_challenges_2022";
@@ -173,6 +180,13 @@ declare module 'astro:content' {
   collection: "projects";
   data: InferEntrySchema<"projects">
 } & { render(): Render[".mdx"] };
+"planned_home_network_2024/index.mdx": {
+	id: "planned_home_network_2024/index.mdx";
+  slug: "planned_home_network_2024";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".mdx"] };
 "roborave_2024/index.mdx": {
 	id: "roborave_2024/index.mdx";
   slug: "roborave_2024";
@@ -183,6 +197,13 @@ declare module 'astro:content' {
 "technical_blog_rewrite_2024/index.mdx": {
 	id: "technical_blog_rewrite_2024/index.mdx";
   slug: "technical_blog_rewrite_2024";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".mdx"] };
+"uqcs_hackathon_2023/index.mdx": {
+	id: "uqcs_hackathon_2023/index.mdx";
+  slug: "uqcs_hackathon_2023";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
