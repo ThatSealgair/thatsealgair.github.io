@@ -173,6 +173,13 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "projects": {
+"drc_2023/index.mdx": {
+	id: "drc_2023/index.mdx";
+  slug: "drc_2023";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".mdx"] };
 "engg1100_ufv/index.mdx": {
 	id: "engg1100_ufv/index.mdx";
   slug: "engg1100_ufv";
