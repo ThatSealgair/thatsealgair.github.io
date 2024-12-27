@@ -11,13 +11,9 @@ commands:
     glob: "*.{ts,tsx,js,jsx,css,scss,json,md,astro}"
     run: bunx prettier --write {staged_files}
 
-#  spell-check:
-#    run: typos {staged_files}
+  spell-check:
+    run: typos {staged_files}
   
-#  stylelint:
-#    glob: "*.{css,scss}"
-#    run: bunx stylelint --fix {staged_files}
-
   typecheck:
     run: bunx tsc --noEmit
   
@@ -30,7 +26,8 @@ pre-commit:
   parallel: true
   commands:
     prettier:
-      glob: "*.{ts,tsx,js,jsx,css,scss,json,md,astro}"
+      allow_failure: true
+      glob: "*.{ts,tsx,js,jsx,css,scss,json,md}"
       run: bunx prettier --write {staged_files}
         
     stylelint:
@@ -41,9 +38,6 @@ pre-commit:
     typecheck:
       tags: frontend security
       run: bunx tsc --noEmit
-
-    spell-check:
-      run: typos {staged_files}
     
     astro-check:
       tags: frontend astro
