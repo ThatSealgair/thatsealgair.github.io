@@ -1,0 +1,33 @@
+[default]
+locale = "en"
+check-filename = true
+check-file = true
+extend-ignore-re = [
+    "(?m)#\\s*spell-check-ignore$",
+    "(?s)```.*?```"
+]
+
+extend-ignore-identifiers-re = [
+    "[A-Z]{2,}\\d*",     # SCREAMING_SNAKE_CASE
+    "r#[a-z_]+#",        # Raw identifiers
+    "(?i)impl[a-z]+"     # impl blocks
+]
+
+[files]
+extend-exclude = [
+    "target/**",
+    "Cargo.lock",
+    "*.bin",
+    "*.exe",
+    "*.o",
+    "*.ttf",
+    "*.woff2",
+]
+
+[type.rust]
+extend-glob = ["*.rs"]
+check-file = true
+
+[type.cargo]
+extend-glob = ["Cargo.toml", "Cargo.lock"]
+check-file = true

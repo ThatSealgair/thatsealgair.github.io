@@ -11,12 +11,12 @@ commands:
     glob: "*.{ts,tsx,js,jsx,css,scss,json,md,astro}"
     run: bunx prettier --write {staged_files}
 
-  spell-check:
-    run: typos {staged_files}
+#  spell-check:
+#    run: typos {staged_files}
   
-  stylelint:
-    glob: "*.{css,scss}"
-    run: bunx stylelint --fix {staged_files}
+#  stylelint:
+#    glob: "*.{css,scss}"
+#    run: bunx stylelint --fix {staged_files}
 
   typecheck:
     run: bunx tsc --noEmit

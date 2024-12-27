@@ -9,8 +9,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        serif: ["Lora", ...defaultTheme.fontFamily.serif],
+        mono: ['"RecMonoLinear Nerd Font"', ...defaultTheme.fontFamily.mono],
+        sans: ['"RecMonoLinear Nerd Font"', ...defaultTheme.fontFamily.mono],
+        serif: ['"RecMonoLinear Nerd Font"', ...defaultTheme.fontFamily.mono],
       },
     },
   },
