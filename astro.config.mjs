@@ -13,13 +13,17 @@ const options = {
 };
 
 export default defineConfig({
-  site: "https://sealgair.dev",
-  integrations: [mdx(), sitemap(), tailwind()],
+  build: {
+    minify: true
+  },
   image: {
     service: imageService(),
   },
+  integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex, [rehypePrettyCode, options]]
-  }
+  },
+  output: 'static',
+  site: "https://sealgair.dev"
 });
