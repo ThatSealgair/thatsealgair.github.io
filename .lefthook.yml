@@ -1,0 +1,88 @@
+skip_output:
+  - meta
+  - merge
+  - success
+
+commands:
+  astro-check:
+    run: bunx astro check
+      
+  prettier:
+    glob: "*.{ts,tsx,js,jsx,css,scss,json,md,astro}"
+    run: bunx prettier --write {staged_files}
+
+  spell-check:
+    run: typos {staged_files}
+  
+  stylelint:
+    glob: "*.{css,scss}"
+    run: bunx stylelint --fix {staged_files}
+
+  typecheck:
+    run: bunx tsc --noEmit
+  
+  test:
+    run: bun test
+  
+
+# Pre-commit hook configuration
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: "*.{ts,tsx,js,jsx,css,scss,json,md,astro}"
+      run: bunx prettier --write {staged_files}
+        
+    stylelint:
+      allow_failure: true
+      glob: "*.{css,scss}"
+      run: bunx stylelint --fix {staged_files}
+    
+    typecheck:
+      tags: frontend security
+      run: bunx tsc --noEmit
+
+    spell-check:
+      run: typos {staged_files}
+    
+    astro-check:
+      tags: frontend astro
+      run: bunx astro check
+    
+    # Add staged files back after fixes
+    add-fixed:
+      stage_fixed: true
+      run: git add {staged_files}
+
+pre-push:
+  parallel: true
+  commands:
+    typecheck:
+      tags: frontend security
+      run: bunx tsc --noEmit
+    
+    test:
+      tags: frontend test
+      run: bun test
+    
+    astro-check:
+      tags: frontend astro
+      run: bunx astro check
+        
+    build:
+      tags: frontend build
+      run: bun run build
+
+
+dependencies:
+  bun:
+    - "@commitlint/cli"
+    - "@commitlint/config-conventional"
+    - "eslint"
+    - "prettier"
+    - "stylelint"
+    - "typescript"
+    - "@astrojs/check"
+
+  cargo:
+    - "typos"
