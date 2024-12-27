@@ -1,25 +1,16 @@
 {
-  "extends": [
-    "stylelint-config-standard"
-  ],
+  "extends": ["stylelint-config-standard"],
   "rules": {
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": [
-          "tailwind",
-          "apply",
-          "layer",
-          "screen"
-        ]
+        "ignoreAtRules": ["tailwind", "apply", "layer", "screen"]
       }
     ],
     "function-no-unknown": [
       true,
       {
-        "ignoreFunctions": [
-          "theme"
-        ]
+        "ignoreFunctions": ["theme"]
       }
     ],
     "selector-class-pattern": null,
