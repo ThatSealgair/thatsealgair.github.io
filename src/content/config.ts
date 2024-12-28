@@ -6,7 +6,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    draft: z.boolean().optional()
+    draft: z.boolean().optional(),
   }),
 });
 
@@ -17,7 +17,7 @@ const playbookCategories = defineCollection({
     description: z.string(),
     icon: z.string().optional(),
     order: z.number().default(0),
-  })
+  }),
 });
 
 const playbooks = defineCollection({
@@ -33,7 +33,7 @@ const playbooks = defineCollection({
     order: z.number().default(0),
     repoURL: z.string().optional(),
     docsURL: z.string().optional(),
-  })
+  }),
 });
 
 const projects = defineCollection({
@@ -44,7 +44,7 @@ const projects = defineCollection({
     date: z.coerce.date(),
     draft: z.boolean().optional(),
     demoURL: z.string().optional(),
-    repoURL: z.string().optional()
+    repoURL: z.string().optional(),
   }),
 });
 
@@ -58,4 +58,10 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { blog, "playbook-categories": playbookCategories, playbooks, projects, work };
+export const collections = {
+  blog,
+  "playbook-categories": playbookCategories,
+  playbooks,
+  projects,
+  work,
+};
