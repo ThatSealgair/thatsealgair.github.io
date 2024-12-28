@@ -10,14 +10,30 @@ const blog = defineCollection({
   }),
 });
 
-const work = defineCollection({
+const playbookCategories = defineCollection({
   type: "content",
   schema: z.object({
-    company: z.string(),
-    role: z.string(),
-    dateStart: z.coerce.date(),
-    dateEnd: z.union([z.coerce.date(), z.string()]),
-  }),
+    title: z.string(),
+    description: z.string(),
+    icon: z.string().optional(),
+    order: z.number().default(0),
+  })
+});
+
+const playbooks = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.string(),
+    tags: z.array(z.string()).default([]),
+    date: z.coerce.date().optional(),
+    lastUpdated: z.coerce.date().optional(),
+    draft: z.boolean().optional(),
+    order: z.number().default(0),
+    repoURL: z.string().optional(),
+    docsURL: z.string().optional(),
+  })
 });
 
 const projects = defineCollection({
@@ -32,4 +48,14 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { blog, work, projects };
+const work = defineCollection({
+  type: "content",
+  schema: z.object({
+    company: z.string(),
+    role: z.string(),
+    dateStart: z.coerce.date(),
+    dateEnd: z.union([z.coerce.date(), z.string()]),
+  }),
+});
+
+export const collections = { blog, "playbook-categories": playbookCategories, playbooks, projects, work };
