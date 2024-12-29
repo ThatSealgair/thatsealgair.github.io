@@ -11,44 +11,44 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Technical blog to share projects and thoughts."
+  DESCRIPTION: "Technical blog to share projects and thoughts.",
 };
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about."
+  DESCRIPTION: "A collection of articles on topics I am passionate about.",
 };
 
 export const WORK: Metadata = {
   TITLE: "Work",
-  DESCRIPTION: "Work history."
+  DESCRIPTION: "Work history.",
 };
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "Collection of my personal and professional projects."
+  DESCRIPTION: "Collection of my personal and professional projects.",
 };
 
 export const PLAYBOOKS: Metadata = {
   TITLE: "Playbooks",
-  DESCRIPTION: "Technical guides and documented procedures."
-}
+  DESCRIPTION: "Technical guides and documented procedures.",
+};
 
 export const PLAYBOOK_CATEGORIES: PlaybookCategory = [
   {
     NAME: "Blue Team",
     HREF: "/playbooks/blue-team",
-    ICON: "server"
+    ICON: "server",
   },
   {
     NAME: "DevOps",
     HREF: "/playbooks/devops",
-    ICON: "server"
+    ICON: "server",
   },
   {
     NAME: "Electronics",
     HREF: "/playbooks/electronics",
-    ICON: "cpu"
+    ICON: "cpu",
   },
   {
     NAME: "Red Team",
@@ -58,21 +58,21 @@ export const PLAYBOOK_CATEGORIES: PlaybookCategory = [
   {
     NAME: "Software Development",
     HREF: "/playbooks/software-development",
-    ICON: "code"
+    ICON: "code",
   },
 ];
 
 export const SOCIALS: Socials = [
-  { 
+  {
     NAME: "twitter-x",
     HREF: "https://twitter.com/Sealgair",
   },
-  { 
+  {
     NAME: "github",
-    HREF: "https://github.com/thatsealgair"
+    HREF: "https://github.com/thatsealgair",
   },
-  { 
+  {
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/jay-k-hunter",
-  }
+  },
 ];
