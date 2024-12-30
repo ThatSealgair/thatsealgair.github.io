@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+
+export async function getStaticPaths() {
+  const playbooks = await getCollection('playbooks', ({ data }) => !data.draft);
+  
+  return playbooks.map(playbook => {
+    const [category, ...slugParts] = playbook.slug.split('/');
+    return {
+      params: { 
+        category,
+        slug: slugParts.join('/') 
+      },
+      props: { playbook },
+    };
+  });
+}
+
+const { playbook } = Astro.props;
+const { Content } = await playbook.render();
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<PageLayout title={playbook.data.title} description={playbook.data.description}>
+  <Container>
+    <article class="prose dark:prose-invert max-w-none">
+      <div class="animate">
+        <h1>{playbook.data.title}</h1>
+        <div class="opacity-75 text-sm">
+          Last updated: {playbook.data.lastUpdated ? formatDate(playbook.data.lastUpdated) : formatDate(playbook.data.date)}
+        </div>
+      </div>
+      
+      <div class="animate">
+        <Content />
+      </div>
+    </article>
+  </Container>
+</PageLayout>

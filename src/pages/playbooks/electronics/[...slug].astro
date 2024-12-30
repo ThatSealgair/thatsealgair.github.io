@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { SITE } from "@consts";
+
+export async function getStaticPaths() {
+  const playbooks = await getCollection('playbooks', ({ data }) => !data.draft);
+  return playbooks.map(playbook => ({
+    params: { 
+      category: playbook.data.category,
+      slug: playbook.slug 
+    },
+    props: { playbook },
+  }));
+}
+
+const { playbook } = Astro.props;
+const { Content } = await playbook.render();
+
+// Get navigation items for the category
+const categoryPlaybooks = await getCollection(
+  'playbooks', 
+  ({ data }) => !data.draft && data.category === playbook.data.category
+).then(items => items.sort((a, b) => a.data.order - b.data.order));
+
+const currentIndex = categoryPlaybooks.findIndex(p => p.slug === playbook.slug);
+const prevPlaybook = currentIndex > 0 ? categoryPlaybooks[currentIndex - 1] : null;
+const nextPlaybook = currentIndex < categoryPlaybooks.length - 1 
+  ? categoryPlaybooks[currentIndex + 1] 
+  : null;
+---
+
+<PageLayout title={playbook.data.title} description={playbook.data.description}>
+  <Container>
+    <article class="prose dark:prose-invert max-w-none">
+      <div class="animate">
+        <h1>{playbook.data.title}</h1>
+        <div class="opacity-75 text-sm">
+          Last updated: {playbook.data.lastUpdated?.toLocaleDateString() || playbook.data.date.toLocaleDateString()}
+        </div>
+      </div>
+      
+      <div class="animate">
+        <Content />
+      </div>
+      
+      <div class="mt-8 flex justify-between">
+        {prevPlaybook && (
+          <a href={`/playbooks/${playbook.data.category}/${prevPlaybook.slug}`} 
+             class="text-sm hover:underline">
+            ← {prevPlaybook.data.title}
+          </a>
+        )}
+        {nextPlaybook && (
+          <a href={`/playbooks/${playbook.data.category}/${nextPlaybook.slug}`}
+             class="text-sm hover:underline">
+            {nextPlaybook.data.title} →
+          </a>
+        )}
+      </div>
+    </article>
+  </Container>
+</PageLayout>

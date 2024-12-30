@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import { PLAYBOOKS } from "@consts";
+
+const categories = await getCollection("playbook-categories");
+const playbooks = await getCollection("playbooks", ({ data }) => !data.draft);
+
+const playbooksByCategory = categories.map(category => ({
+  ...category,
+  playbooks: playbooks.filter(p => p.data.category === category.slug)
+    .sort((a, b) => a.data.order - b.data.order)
+})).sort((a, b) => a.data.order - b.data.order);
+---
+
+<PageLayout title={PLAYBOOKS.TITLE} description={PLAYBOOKS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Playbooks
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {playbooksByCategory.map(category => (
+          <div class="animate">
+            <a href={`/playbooks/${category.slug}`} 
+               class="block p-6 rounded-lg border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600">
+              <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">
+                {category.data.title}
+              </h2>
+              <p class="text-sm opacity-75 mb-4">
+                {category.data.description}
+              </p>
+              <div class="text-sm opacity-75">
+                {category.playbooks.length} guides
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</PageLayout>

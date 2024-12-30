@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import type { ContentEntry } from "@types";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import { PLAYBOOK_CATEGORIES } from "@consts";
+
+export async function getStaticPaths() {
+  const validCategories = [
+    'blue-team',
+    'devops',
+    'electronics',
+    'red-team',
+    'software-development'
+  ];
+
+  const playbooks = await getCollection('playbooks');
+  
+  return validCategories.map(category => ({
+    params: { category },
+    props: { 
+      category,
+      playbooks: playbooks
+        .filter(entry => entry.slug.startsWith(`${category}/`) && !entry.slug.endsWith('_index'))
+        .sort((a, b) => {
+          if (a.data.order && b.data.order) {
+            return a.data.order - b.data.order;
+          }
+          return b.data.date.valueOf() - a.data.date.valueOf();
+        })
+    }
+  }));
+}
+
+const { category, playbooks } = Astro.props;
+const categoryData = PLAYBOOK_CATEGORIES.find(cat => cat.NAME.toLowerCase().replace(' ', '-') === category);
+const title = categoryData?.NAME || category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+---
+
+<PageLayout title={title} description={`${title} playbooks and guides`}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate">
+        <h1 class="font-semibold text-2xl text-black dark:text-white">
+          {title}
+        </h1>
+        <p class="mt-2 opacity-75">
+          Collection of {title.toLowerCase()} guides and procedures
+        </p>
+      </div>
+      
+      {playbooks.length > 0 ? (
+        <ul class="animate flex flex-col gap-4">
+          {playbooks.map(playbook => (
+            <li>
+              <ArrowCard 
+                entry={{
+                  ...playbook,
+                  data: {
+                    ...playbook.data,
+                    date: playbook.data.date || new Date(),
+                  }
+                } as ContentEntry} 
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="animate opacity-75">No playbooks available yet.</p>
+      )}
+    </div>
+  </Container>
+</PageLayout>

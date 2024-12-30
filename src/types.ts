@@ -1,3 +1,5 @@
+import type { CollectionEntry } from "astro:content";
+
 export type Site = {
   NAME: string;
   EMAIL: string;
@@ -22,3 +24,23 @@ export type PlaybookCategory = {
   HREF: string;
   ICON: string;
 }[];
+
+export type PlaybookEntry = CollectionEntry<"playbooks">;
+
+export type ArrowCardEntry =
+  | CollectionEntry<"blog">
+  | CollectionEntry<"projects">
+  | PlaybookEntry;
+
+export type NavItem = {
+  name: string;
+  href: string;
+};
+
+export interface ContentFrontmatter {
+  title: string;
+  description: string;
+  date: Date;
+  draft?: boolean;
+  [key: string]: unknown;
+}
