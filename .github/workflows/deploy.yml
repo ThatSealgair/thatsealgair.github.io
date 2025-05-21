@@ -28,7 +28,7 @@ jobs:
             experimental-features = nix-command flakes
 
       - name: Build site with flake.nix
-        run: run build .#
+        run: nix build .#
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
