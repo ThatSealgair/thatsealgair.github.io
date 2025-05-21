@@ -30,10 +30,14 @@ jobs:
       - name: Build site with flake.nix
         run: nix build .# --max-jobs auto
 
+      - name: Copy build output to dist/
+        run: |
+          cp -r result/* dist/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./result
+          path: ./dist
 
   deploy:
     needs: build
