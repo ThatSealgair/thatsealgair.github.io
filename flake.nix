@@ -3,30 +3,29 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs }:
-    let
-      systems = [ "x86_64-linux" "aarch64-linux" ];
-    in
-    {
-      devShells = builtins.listToAttrs (map (system: {
-        name = system;
-        value = nixpkgs.legacyPackages.${system}.mkShell {
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        devShells.default = pkgs.mkShell {
           buildInputs = [
-            nixpkgs.legacyPackages.${system}.bun
-            nixpkgs.legacyPackages.${system}.nodejs_latest
-            nixpkgs.legacyPackages.${system}.nodePackages.typescript
-            nixpkgs.legacyPackages.${system}.nodePackages.typescript-language-server
-            nixpkgs.legacyPackages.${system}.biome
-            nixpkgs.legacyPackages.${system}.dprint
-            nixpkgs.legacyPackages.${system}.vscode-langservers-extracted
-            nixpkgs.legacyPackages.${system}.marksman
-            nixpkgs.legacyPackages.${system}.markdown-oxide
-            nixpkgs.legacyPackages.${system}.typos
+            pkgs.bun
+            pkgs.nodejs_latest
+            pkgs.nodePackages.typescript
+            pkgs.nodePackages.typescript-language-server
+            pkgs.biome
+            pkgs.dprint
+            pkgs.vscode-langservers-extracted
+            pkgs.marksman
+            pkgs.markdown-oxide
+            pkgs.typos
           ];
         };
-      }) systems);
-    };
+      }
+    );
 }
 
