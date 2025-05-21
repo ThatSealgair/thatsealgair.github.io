@@ -25,7 +25,29 @@
             pkgs.typos
           ];
         };
-      }
-    );
+
+      # Build Astro for deployment
+      packages.default = pkgs.stdenv.mkDerivation {
+        pname = "sealgair.dev";
+        version = "1.0.0";
+        src = ./.;
+        buildInputs = [ pkgs.bun pkgs.nodejs_latest ];
+
+        # Install dependencies and site is built
+        buildPhase = ''
+          export HOME=$TMPDIR
+          bun install --frozen-lockfile
+          bun run build
+        ''
+
+        # Copy built site
+        installPhase = ''
+          mkdir -p $out
+          cp -r dist/$ $out/
+          if [-f public/CNAME ]; then cp public/CNAME $out/; fi
+        ``;
+      };
+    }
+  );
 }
 
