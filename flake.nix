@@ -4,9 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    bun2nix.url = "github:baileyluTCD/bun2nix";
+    bun2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, bun2nix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -14,6 +16,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = [
             pkgs.bun
+            bun2nix.packages.${system}.default
             pkgs.nodejs_latest
             pkgs.nodePackages.typescript
             pkgs.nodePackages.typescript-language-server
@@ -27,23 +30,8 @@
         };
 
       # Build Astro for deployment
-      packages.default = pkgs.stdenv.mkDerivation {
-        pname = "sealgair.dev";
-        version = "1.0.0";
-        src = ./.;
-        buildInputs = [ pkgs.bun pkgs.nodejs_latest ];
-
-        buildPhase = ''
-          export HOME=$TMPDIR
-          bun install --frozen-lockfile
-          bun run build
-          '';
-
-        installPhase = ''
-          mkdir -p $out
-          cp -r dist/* $out/
-          if [ -f public/CNAME ]; then cp public/CNAME $out/; fi
-          '';
+      packages.default = pkgs.callPackage ./default.nix {
+        inherit (bun2nix.lib.${system}) mkBunDerivation;
       };
     }
   );
