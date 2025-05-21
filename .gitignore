@@ -23,3 +23,14 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Nix build artifacts
+result
+*.drv
+
+# direnv
+.envrc
+.direnv/
+
+# Nix garbage collection roots
+.nix-gcroots/
