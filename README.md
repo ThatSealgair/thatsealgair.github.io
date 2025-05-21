@@ -9,4 +9,15 @@ Made using TypeScript, MDX, and Bun
 
 1. Initialise Nix flake `nix flake init -t .`
 2. Enter dev environment `nix develop`
-3. Update dependancies `nix flake update`
+
+
+## Updating
+1. Update bun dependencies `bun update`
+2. Save bun lockfile `bun install --save-text-lockfile`
+3. Update bun2nix `nix run github:baileyluTCD/bun2nix`
+3. Update nix dependancies `nix flake update`
+
+## Building
+``` bash
+nix build .# --max-jobs auto
+```
