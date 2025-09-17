@@ -16,16 +16,16 @@
   "dependencies": {
     "@astrojs/check": "^0.6.0",
     "@astrojs/mdx": "^2.3.1",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.5.1",
     "@astrojs/tailwind": "^5.1.5",
-    "@fontsource/inter": "^5.2.5",
-    "@fontsource/lora": "^5.2.5",
+    "@fontsource/inter": "^5.2.7",
+    "@fontsource/lora": "^5.2.7",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "@unpic/astro": "^0.0.46",
-    "astro": "^4.16.18",
+    "astro": "^4.16.19",
     "astro-embed": "^0.7.4",
     "clsx": "^2.1.1",
     "eslint": "^8.57.1",
@@ -37,11 +37,11 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.13",
-    "stylelint": "^16.19.1",
+    "@types/bun": "^1.2.22",
+    "stylelint": "^16.24.0",
     "stylelint-config-standard": "^36.0.1"
   }
 }
