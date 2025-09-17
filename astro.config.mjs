@@ -9,7 +9,7 @@ import { imageService } from "@unpic/astro/service";
 
 /** @type {import("rehype-pretty-code").Options} */
 const options = {
-  // See Options section
+  theme: "kanagawa-dragon",
 };
 
 export default defineConfig({

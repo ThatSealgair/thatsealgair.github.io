@@ -11,16 +11,16 @@ export default {
       colors: {
         dark: {
           primary: '#C8C093', // white
-          secondary: '#a6a69c', // brightBlack
+          secondary: '#727169', // brightBlack
           background: '#181616',
-          surface: '#0d0c0c', // black
+          surface: '#0D0C0C', // black
           overlay: '#223249', // selectionBackground
-          muted: '#a6a69c', // brightBlack
+          muted: '#727169', // brightBlack
           
           accent: {
-            DEFAULT: '#a292a3', // purple
-            secondary: '#8ba4b0', // blue
-            tertiary: '#8a9a7b', // green
+            DEFAULT: '#957FB8', // purple
+            secondary: '#7E9CD8', // blue
+            tertiary: '#98BB6C', // green
           },
           
           text: {
